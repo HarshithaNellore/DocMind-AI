@@ -1,0 +1,15 @@
+streamlit
+python-dotenv
+
+langchain
+langchain-community
+langchain-text-splitters
+langchain-google-genai
+
+chromadb
+
+pypdf
+
+google-generativeai
+
+protobuf==5.29.5
