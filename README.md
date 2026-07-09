@@ -153,7 +153,7 @@ Each component is isolated to make the system modular and extensible.
 ## 1. Clone the repository
 
 ```bash
-git clone https://github.com/<YOUR_USERNAME>/DocMind-AI.git
+git clone https://github.com/<HarshithaNellore>/DocMind-AI.git
 cd DocMind-AI
 ```
 
