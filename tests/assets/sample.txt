@@ -1,0 +1,5 @@
+DocMind AI Version 2
+
+This is a simple document used for testing the ingestion pipeline.
+
+The processor should extract this text successfully.

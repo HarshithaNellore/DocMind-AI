@@ -1,0 +1,504 @@
+2026-07-09 15:34:33 | INFO     | __main__ | Logger initialized successfully.
+2026-07-09 15:44:31 | INFO     | __main__ | Starting DocMind AI
+2026-07-09 17:08:12 | INFO     | repositories.metadata_repository | Registered document 'paper.pdf'.
+2026-07-09 17:11:38 | INFO     | repositories.metadata_repository | Registered document 'paper.pdf'.
+2026-07-09 17:45:04 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 18:37:39 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 18:46:10 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 18:50:50 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 20:45:15 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 21:07:02 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 21:07:02 | INFO     | managers.document_manager | Starting ingestion for 'sample.txt'.
+2026-07-09 21:07:02 | INFO     | managers.file_manager | Saving uploaded file '6d5386f8-6bf0-43f1-9f00-e6f6e6066992.txt'.
+2026-07-09 21:07:02 | WARNING  | repositories.metadata_repository | Metadata registry corrupted. Recreating it.
+2026-07-09 21:07:02 | INFO     | repositories.metadata_repository | Registered document 'sample.txt'.
+2026-07-09 21:07:02 | INFO     | repositories.metadata_repository | Updated 'sample.txt'.
+2026-07-09 21:07:02 | ERROR    | managers.document_manager | Processing failed for 'sample.txt'.
+2026-07-09 21:15:33 | INFO     | repositories.metadata_repository | Creating metadata registry.
+2026-07-09 21:15:33 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 21:15:33 | INFO     | managers.document_manager | Starting ingestion for 'sample.txt'.
+2026-07-09 21:15:33 | INFO     | managers.file_manager | Saving uploaded file '6c932987-a887-4db4-8650-f5a49d599ab3.txt'.
+2026-07-09 21:18:07 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 21:18:07 | INFO     | managers.document_manager | Starting ingestion for 'sample.txt'.
+2026-07-09 21:18:07 | INFO     | managers.file_manager | Saving uploaded file 'f75310f1-bb99-4184-ba01-f035885f9e2d.txt'.
+2026-07-09 21:18:07 | INFO     | repositories.metadata_repository | Registered document 'sample.txt'.
+2026-07-09 21:18:07 | INFO     | repositories.metadata_repository | Updated 'sample.txt'.
+2026-07-09 21:18:07 | INFO     | managers.document_manager | Metadata updated for 'sample.txt'.
+2026-07-09 21:18:07 | INFO     | managers.document_manager | Finished ingestion in 8.33 ms.
+2026-07-09 21:29:06 | INFO     | rag.chunker | Chunking 'sample.txt'.
+2026-07-09 21:29:06 | INFO     | rag.chunker | Generated 4 chunks.
+2026-07-09 21:36:43 | INFO     | rag.chunker | Chunking 'sample.txt'.
+2026-07-09 21:36:43 | INFO     | rag.chunker | Chunking complete | Document='sample.txt' | Pages=1 | Chunks=4 | Chunk Size=1000 | Overlap=200
+2026-07-09 21:40:45 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 21:40:45 | INFO     | rag.embeddings | Generating embeddings for 1 chunks.
+2026-07-09 21:40:46 | ERROR    | rag.embeddings | Embedding failed for chunk chunk_0001
+Traceback (most recent call last):
+  File "C:\Users\Harshitha\Downloads\DocMind AI\rag\embeddings.py", line 74, in embed_chunks
+    response = self._client.models.embed_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\google\genai\models.py", line 4936, in embed_content
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\google\genai\_api_client.py", line 1177, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\google\genai\_api_client.py", line 997, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\tenacity\__init__.py", line 475, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\tenacity\__init__.py", line 376, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\tenacity\__init__.py", line 418, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\tenacity\__init__.py", line 185, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\tenacity\__init__.py", line 478, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\google\genai\_api_client.py", line 974, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "C:\Users\Harshitha\Downloads\DocMind AI\.venv\Lib\site-packages\google\genai\errors.py", line 105, in raise_for_response
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'models/text-embedding-004 is not found for API version v1beta, or is not supported for embedContent. Call ModelService.ListModels to see the list of available models and their supported methods.', 'status': 'NOT_FOUND'}}
+2026-07-09 21:44:33 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 21:44:33 | INFO     | rag.embeddings | Generating embeddings for 1 chunks.
+2026-07-09 21:44:34 | INFO     | rag.embeddings | Generated 1 embeddings.
+2026-07-09 21:51:57 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 21:51:57 | INFO     | rag.embeddings | Generating embeddings for 1 chunks.
+2026-07-09 21:51:57 | INFO     | rag.embeddings | Embedding batch 1/1 (1 chunks).
+2026-07-09 21:51:57 | INFO     | rag.embeddings | Generated 1 embeddings.
+2026-07-09 22:08:46 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:09:45 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:17:20 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:23:22 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 22:23:22 | INFO     | rag.embeddings | Generating embeddings for 1 chunks.
+2026-07-09 22:23:22 | INFO     | rag.embeddings | Embedding batch 1/1 (1 chunks).
+2026-07-09 22:23:23 | INFO     | rag.embeddings | Generated 1 embeddings.
+2026-07-09 22:23:23 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:23:23 | INFO     | rag.vector_store | Indexed 1 chunks.
+2026-07-09 22:27:02 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 22:27:02 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:27:02 | INFO     | rag.indexer | Indexing 1 chunks.
+2026-07-09 22:27:02 | INFO     | rag.embeddings | Generating embeddings for 1 chunks.
+2026-07-09 22:27:02 | INFO     | rag.embeddings | Embedding batch 1/1 (1 chunks).
+2026-07-09 22:27:03 | INFO     | rag.embeddings | Generated 1 embeddings.
+2026-07-09 22:27:04 | INFO     | rag.vector_store | Indexed 1 chunks.
+2026-07-09 22:27:04 | INFO     | rag.indexer | Indexed 1 chunks successfully.
+2026-07-09 22:37:12 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 22:37:12 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:37:12 | INFO     | rag.retriever | Retrieving context.
+2026-07-09 22:37:12 | INFO     | rag.embeddings | Embedding query.
+2026-07-09 22:37:13 | INFO     | rag.vector_store | Retrieved 2 chunks.
+2026-07-09 22:52:58 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 22:52:58 | INFO     | rag.llm | Generating response.
+2026-07-09 22:59:28 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 22:59:29 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 22:59:29 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 22:59:29 | INFO     | rag.pipeline | Processing question.
+2026-07-09 22:59:29 | INFO     | rag.retriever | Retrieving context.
+2026-07-09 22:59:29 | INFO     | rag.embeddings | Embedding query.
+2026-07-09 22:59:30 | INFO     | rag.vector_store | Retrieved 2 chunks.
+2026-07-09 22:59:30 | INFO     | rag.llm | Generating response.
+2026-07-09 22:59:31 | INFO     | rag.pipeline | Question answered successfully.
+2026-07-09 23:04:27 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:04:27 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:04:27 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:04:27 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:07:13 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:07:13 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:07:13 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:07:13 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:15:06 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:15:06 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:15:06 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:15:06 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:20:07 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:20:08 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:20:08 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:20:08 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:25:42 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:25:42 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:25:42 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:25:42 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:40:23 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:40:23 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:40:23 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:40:23 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:42:50 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:42:50 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:42:50 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:42:50 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:43:00 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:43:00 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:43:01 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:43:01 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:43:04 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:43:04 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:43:04 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:43:04 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:43:04 | INFO     | managers.document_manager | Starting ingestion for 'Harshitha_Resume.pdf'.
+2026-07-09 23:43:04 | INFO     | managers.file_manager | Saving uploaded file 'f34e06dc-0c1d-469a-83f7-ff640e02dd5e.pdf'.
+2026-07-09 23:43:04 | INFO     | repositories.metadata_repository | Registered document 'Harshitha_Resume.pdf'.
+2026-07-09 23:43:04 | INFO     | processors.pdf_processor | Processing PDF 'f34e06dc-0c1d-469a-83f7-ff640e02dd5e.pdf'.
+2026-07-09 23:43:04 | INFO     | processors.pdf_processor | Extracted 1 pages from 'f34e06dc-0c1d-469a-83f7-ff640e02dd5e.pdf'.
+2026-07-09 23:43:04 | INFO     | rag.chunker | Chunking 'Harshitha_Resume.pdf'.
+2026-07-09 23:43:04 | INFO     | rag.chunker | Chunking complete | Document='Harshitha_Resume.pdf' | Pages=1 | Chunks=4 | Chunk Size=1000 | Overlap=200
+2026-07-09 23:43:04 | INFO     | rag.indexer | Indexing 4 chunks.
+2026-07-09 23:43:04 | INFO     | rag.embeddings | Generating embeddings for 4 chunks.
+2026-07-09 23:43:04 | INFO     | rag.embeddings | Embedding batch 1/1 (4 chunks).
+2026-07-09 23:43:05 | INFO     | rag.embeddings | Generated 4 embeddings.
+2026-07-09 23:43:06 | INFO     | rag.vector_store | Indexed 4 chunks.
+2026-07-09 23:43:06 | INFO     | rag.indexer | Indexed 4 chunks successfully.
+2026-07-09 23:43:06 | INFO     | managers.document_manager | Indexed 4 chunks.
+2026-07-09 23:43:06 | INFO     | repositories.metadata_repository | Updated 'Harshitha_Resume.pdf'.
+2026-07-09 23:43:06 | INFO     | managers.document_manager | Metadata updated for 'Harshitha_Resume.pdf'.
+2026-07-09 23:43:06 | INFO     | managers.document_manager | Finished ingestion in 1951.82 ms.
+2026-07-09 23:56:01 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:56:01 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:56:01 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:56:01 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:56:55 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:56:55 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:56:55 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:56:55 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-09 23:56:55 | INFO     | managers.file_manager | Deleted file 'f34e06dc-0c1d-469a-83f7-ff640e02dd5e.pdf'.
+2026-07-09 23:56:55 | INFO     | rag.vector_store | Deleted vectors for 'f34e06dc-0c1d-469a-83f7-ff640e02dd5e'.
+2026-07-09 23:56:55 | INFO     | repositories.metadata_repository | Deleted metadata 'f34e06dc-0c1d-469a-83f7-ff640e02dd5e'.
+2026-07-09 23:56:55 | INFO     | managers.document_manager | Deleted document 'Harshitha_Resume.pdf'.
+2026-07-09 23:56:55 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-09 23:56:55 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-09 23:56:56 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-09 23:56:56 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:02:04 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:02:04 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:02:04 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:02:04 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:15:59 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:15:59 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:15:59 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:15:59 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:16:12 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:16:12 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:16:13 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:16:13 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:16:13 | INFO     | rag.pipeline | Processing question.
+2026-07-10 00:16:13 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 00:16:13 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 00:16:14 | INFO     | rag.vector_store | Retrieved 2 chunks.
+2026-07-10 00:16:14 | INFO     | rag.llm | Generating response.
+2026-07-10 00:23:38 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:23:38 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:23:38 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:23:39 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:24:40 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:24:41 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:24:41 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:24:41 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:26:25 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:26:25 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:26:25 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:26:25 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:30:40 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:30:40 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:30:41 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:30:41 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:34:39 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:34:39 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:34:39 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:34:40 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:34:53 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:34:53 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:34:53 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:34:54 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:35:01 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:35:01 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:35:02 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:35:02 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:35:02 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 00:35:02 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 00:35:02 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 00:35:03 | INFO     | rag.vector_store | Retrieved 2 chunks.
+2026-07-10 00:35:03 | INFO     | rag.llm | Streaming response.
+2026-07-10 00:45:20 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:45:21 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:45:21 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:45:21 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:45:28 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:45:29 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:45:29 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:45:29 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:45:29 | INFO     | managers.file_manager | Deleted file 'f75310f1-bb99-4184-ba01-f035885f9e2d.txt'.
+2026-07-10 00:45:29 | INFO     | rag.vector_store | Deleted vectors for 'f75310f1-bb99-4184-ba01-f035885f9e2d'.
+2026-07-10 00:45:29 | INFO     | repositories.metadata_repository | Deleted metadata 'f75310f1-bb99-4184-ba01-f035885f9e2d'.
+2026-07-10 00:45:29 | INFO     | managers.document_manager | Deleted document 'sample.txt'.
+2026-07-10 00:45:29 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:45:29 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:45:29 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:45:29 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:54:20 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:54:20 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:54:20 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:54:20 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:54:26 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:54:26 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:54:27 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:54:27 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:54:29 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:54:29 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:54:29 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:54:29 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:54:29 | INFO     | managers.document_manager | Starting ingestion for 'Harshitha_Resume.pdf'.
+2026-07-10 00:54:29 | INFO     | managers.file_manager | Saving uploaded file 'a36a8725-d5df-454f-bcd1-68430fa84b5c.pdf'.
+2026-07-10 00:54:29 | INFO     | repositories.metadata_repository | Registered document 'Harshitha_Resume.pdf'.
+2026-07-10 00:54:29 | INFO     | processors.pdf_processor | Processing PDF 'a36a8725-d5df-454f-bcd1-68430fa84b5c.pdf'.
+2026-07-10 00:54:30 | INFO     | processors.pdf_processor | Extracted 1 pages from 'a36a8725-d5df-454f-bcd1-68430fa84b5c.pdf'.
+2026-07-10 00:54:30 | INFO     | rag.chunker | Chunking 'Harshitha_Resume.pdf'.
+2026-07-10 00:54:30 | INFO     | rag.chunker | Chunking complete | Document='Harshitha_Resume.pdf' | Pages=1 | Chunks=4 | Chunk Size=1000 | Overlap=200
+2026-07-10 00:54:30 | INFO     | rag.indexer | Indexing 4 chunks.
+2026-07-10 00:54:30 | INFO     | rag.embeddings | Generating embeddings for 4 chunks.
+2026-07-10 00:54:30 | INFO     | rag.embeddings | Embedding batch 1/1 (4 chunks).
+2026-07-10 00:54:31 | INFO     | rag.embeddings | Generated 4 embeddings.
+2026-07-10 00:54:31 | INFO     | rag.vector_store | Indexed 4 chunks.
+2026-07-10 00:54:31 | INFO     | rag.indexer | Indexed 4 chunks successfully.
+2026-07-10 00:54:31 | INFO     | managers.document_manager | Indexed 4 chunks.
+2026-07-10 00:54:31 | INFO     | repositories.metadata_repository | Updated 'Harshitha_Resume.pdf'.
+2026-07-10 00:54:31 | INFO     | managers.document_manager | Metadata updated for 'Harshitha_Resume.pdf'.
+2026-07-10 00:54:31 | INFO     | managers.document_manager | Finished ingestion in 1374.66 ms.
+2026-07-10 00:54:44 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 00:54:44 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 00:54:44 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 00:54:44 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 00:54:44 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 00:54:44 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 00:54:44 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 00:54:45 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 00:54:45 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:08:13 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:08:13 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:08:13 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:08:13 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:08:26 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:08:26 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:08:26 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:08:26 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:08:28 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:08:29 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:08:29 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:08:29 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:08:29 | INFO     | managers.document_manager | Starting ingestion for 'Harshitha_Resume.pdf'.
+2026-07-10 01:08:29 | INFO     | managers.file_manager | Saving uploaded file '4db2d905-7e98-4714-8fb9-1b6ac3f5038f.pdf'.
+2026-07-10 01:08:44 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:08:44 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:08:44 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:08:44 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:08:44 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:08:44 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:08:44 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:08:45 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:08:45 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:12:37 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:12:37 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:12:37 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:12:37 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:12:49 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:12:49 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:12:49 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:12:49 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:12:57 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:12:57 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:12:57 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:12:57 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:12:57 | INFO     | managers.document_manager | Starting ingestion for 'Harshitha_Resume.pdf'.
+2026-07-10 01:12:57 | INFO     | managers.file_manager | Saving uploaded file 'e528e4c3-cb2c-43eb-937a-75fba38bdc8d.pdf'.
+2026-07-10 01:12:59 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:12:59 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:13:00 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:13:00 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:13:00 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:13:00 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:13:00 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:13:01 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:13:01 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:13:32 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:13:33 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:13:33 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:13:33 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:13:39 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:13:39 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:13:40 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:13:40 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:13:41 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:13:42 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:13:42 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:13:42 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:13:42 | INFO     | managers.document_manager | Starting ingestion for 'Decode_Offer_Letter.pdf'.
+2026-07-10 01:13:42 | INFO     | managers.file_manager | Saving uploaded file '591a6596-f062-4bd4-abe7-d4910b457c0c.pdf'.
+2026-07-10 01:13:42 | INFO     | repositories.metadata_repository | Registered document 'Decode_Offer_Letter.pdf'.
+2026-07-10 01:13:42 | INFO     | processors.pdf_processor | Processing PDF '591a6596-f062-4bd4-abe7-d4910b457c0c.pdf'.
+2026-07-10 01:13:46 | INFO     | processors.pdf_processor | Extracted 1 pages from '591a6596-f062-4bd4-abe7-d4910b457c0c.pdf'.
+2026-07-10 01:13:46 | INFO     | rag.chunker | Chunking 'Decode_Offer_Letter.pdf'.
+2026-07-10 01:13:46 | INFO     | rag.chunker | Chunking complete | Document='Decode_Offer_Letter.pdf' | Pages=1 | Chunks=0 | Chunk Size=1000 | Overlap=200
+2026-07-10 01:13:46 | WARNING  | rag.indexer | No chunks supplied for indexing.
+2026-07-10 01:13:46 | INFO     | managers.document_manager | Indexed 0 chunks.
+2026-07-10 01:13:46 | INFO     | repositories.metadata_repository | Updated 'Decode_Offer_Letter.pdf'.
+2026-07-10 01:13:46 | INFO     | managers.document_manager | Metadata updated for 'Decode_Offer_Letter.pdf'.
+2026-07-10 01:13:46 | INFO     | managers.document_manager | Finished ingestion in 4473.09 ms.
+2026-07-10 01:13:53 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:13:53 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:13:53 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:13:53 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:13:53 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:13:53 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:13:53 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:13:54 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:13:54 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:14:20 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:14:20 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:14:20 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:14:20 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:14:25 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:14:25 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:14:25 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:14:25 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:14:33 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:14:33 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:14:34 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:14:34 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:14:34 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:14:34 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:14:34 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:14:35 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:14:35 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:15:30 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:15:30 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:15:30 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:15:30 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:15:35 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:15:35 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:15:35 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:15:35 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:15:42 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:15:42 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:15:42 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:15:42 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:15:42 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:15:42 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:15:42 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:15:43 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:15:43 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:15:59 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:15:59 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:15:59 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:16:00 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:16:04 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:16:04 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:16:04 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:16:04 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:16:07 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:16:07 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:16:07 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:16:07 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:16:07 | INFO     | managers.document_manager | Starting ingestion for 'Harshitha_Resume.pdf'.
+2026-07-10 01:16:07 | INFO     | managers.file_manager | Saving uploaded file '98ae4f26-f548-48d8-b597-ec607cb8dc76.pdf'.
+2026-07-10 01:16:18 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:16:18 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:16:19 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:16:19 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:16:19 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:16:19 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:16:19 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:16:20 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:16:20 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:21:36 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:21:36 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:21:36 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:21:37 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:22:41 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:22:41 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:22:42 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:22:42 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:24:35 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:24:36 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:24:36 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:24:36 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:24:53 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:24:54 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:24:54 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:24:54 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:24:54 | INFO     | managers.file_manager | Deleted file 'a36a8725-d5df-454f-bcd1-68430fa84b5c.pdf'.
+2026-07-10 01:24:54 | INFO     | rag.vector_store | Deleted vectors for 'a36a8725-d5df-454f-bcd1-68430fa84b5c'.
+2026-07-10 01:24:54 | INFO     | repositories.metadata_repository | Deleted metadata 'a36a8725-d5df-454f-bcd1-68430fa84b5c'.
+2026-07-10 01:24:54 | INFO     | managers.document_manager | Deleted document 'Harshitha_Resume.pdf'.
+2026-07-10 01:24:55 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:24:55 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:24:55 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:24:55 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:24:58 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:24:58 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:24:58 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:24:58 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:24:58 | INFO     | managers.file_manager | Deleted file '591a6596-f062-4bd4-abe7-d4910b457c0c.pdf'.
+2026-07-10 01:24:58 | INFO     | rag.vector_store | Deleted vectors for '591a6596-f062-4bd4-abe7-d4910b457c0c'.
+2026-07-10 01:24:58 | INFO     | repositories.metadata_repository | Deleted metadata '591a6596-f062-4bd4-abe7-d4910b457c0c'.
+2026-07-10 01:24:58 | INFO     | managers.document_manager | Deleted document 'Decode_Offer_Letter.pdf'.
+2026-07-10 01:24:59 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:24:59 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:24:59 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:24:59 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:25:02 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:25:02 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:25:02 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:25:03 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:25:04 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:25:05 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:25:05 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:25:05 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:25:05 | INFO     | managers.document_manager | Starting ingestion for 'Harshitha_Resume.pdf'.
+2026-07-10 01:25:05 | INFO     | managers.file_manager | Saving uploaded file '777a0f43-6466-4559-8fd3-402e5472c81c.pdf'.
+2026-07-10 01:25:05 | INFO     | repositories.metadata_repository | Registered document 'Harshitha_Resume.pdf'.
+2026-07-10 01:25:05 | INFO     | processors.pdf_processor | Processing PDF '777a0f43-6466-4559-8fd3-402e5472c81c.pdf'.
+2026-07-10 01:25:05 | INFO     | processors.pdf_processor | Extracted 1 pages from '777a0f43-6466-4559-8fd3-402e5472c81c.pdf'.
+2026-07-10 01:25:05 | INFO     | rag.chunker | Chunking 'Harshitha_Resume.pdf'.
+2026-07-10 01:25:05 | INFO     | rag.chunker | Chunking complete | Document='Harshitha_Resume.pdf' | Pages=1 | Chunks=4 | Chunk Size=1000 | Overlap=200
+2026-07-10 01:25:05 | INFO     | rag.indexer | Indexing 4 chunks.
+2026-07-10 01:25:05 | INFO     | rag.embeddings | Generating embeddings for 4 chunks.
+2026-07-10 01:25:05 | INFO     | rag.embeddings | Embedding batch 1/1 (4 chunks).
+2026-07-10 01:25:06 | INFO     | rag.embeddings | Generated 4 embeddings.
+2026-07-10 01:25:07 | INFO     | rag.vector_store | Indexed 4 chunks.
+2026-07-10 01:25:07 | INFO     | rag.indexer | Indexed 4 chunks successfully.
+2026-07-10 01:25:07 | INFO     | managers.document_manager | Indexed 4 chunks.
+2026-07-10 01:25:07 | INFO     | repositories.metadata_repository | Updated 'Harshitha_Resume.pdf'.
+2026-07-10 01:25:07 | INFO     | managers.document_manager | Metadata updated for 'Harshitha_Resume.pdf'.
+2026-07-10 01:25:07 | INFO     | managers.document_manager | Finished ingestion in 1705.21 ms.
+2026-07-10 01:25:14 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:25:15 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:25:15 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:25:15 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:25:15 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:25:15 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:25:15 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:25:16 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:25:16 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:25:27 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:25:27 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:25:27 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:25:27 | INFO     | rag.llm | Initialized Gemini chat provider.
+2026-07-10 01:25:27 | INFO     | rag.pipeline | Streaming response.
+2026-07-10 01:25:27 | INFO     | rag.retriever | Retrieving context.
+2026-07-10 01:25:27 | INFO     | rag.embeddings | Embedding query.
+2026-07-10 01:25:28 | INFO     | rag.vector_store | Retrieved 5 chunks.
+2026-07-10 01:25:28 | INFO     | rag.llm | Streaming response.
+2026-07-10 01:31:27 | INFO     | managers.file_manager | Upload directory initialized: C:\Users\Harshitha\Downloads\DocMind AI\data\uploads
+2026-07-10 01:31:28 | INFO     | rag.embeddings | Initialized Gemini embedding provider.
+2026-07-10 01:31:28 | INFO     | rag.vector_store | Initialized vector store 'docmind_documents'.
+2026-07-10 01:31:28 | INFO     | rag.llm | Initialized Gemini chat provider.

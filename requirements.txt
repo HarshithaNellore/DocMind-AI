@@ -1,15 +1,55 @@
-streamlit
-python-dotenv
+# ==========================
+# Web Application
+# ==========================
+streamlit==1.46.1
 
-langchain
-langchain-community
-langchain-text-splitters
-langchain-google-genai
+# ==========================
+# Environment Variables
+# ==========================
+python-dotenv==1.1.1
 
-chromadb
+# ==========================
+# Data Validation
+# ==========================
+pydantic==2.11.7
 
-pypdf
+# ==========================
+# Google Gemini
+# ==========================
+google-genai==1.28.0
 
-google-generativeai
+# ==========================
+# LangChain
+# ==========================
+langchain==0.3.27
+langchain-community==0.3.27
+langchain-text-splitters==0.3.9
 
-protobuf==5.29.5
+# ==========================
+# Vector Database
+# ==========================
+chromadb==1.0.15
+
+# ==========================
+# Document Processing
+# ==========================
+pypdf==5.8.0
+python-docx==1.2.0
+
+# ==========================
+# Data Processing
+# ==========================
+pandas==2.3.1
+numpy==2.3.1
+
+# ==========================
+# Utilities
+# ==========================
+tqdm==4.67.1
+typing_extensions==4.14.1
+
+# ==========================
+# Data Validation & Settings
+# ==========================
+pydantic==2.11.7
+pydantic-settings==2.10.1

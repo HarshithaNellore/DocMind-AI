@@ -1,301 +1,381 @@
-# 📚 DocMind AI – RAG-Powered PDF Question Answering Assistant
+# 📄 DocMind AI
 
-> An end-to-end **Retrieval-Augmented Generation (RAG)** application that enables users to ask natural language questions about a PDF and receive answers grounded **only** in the document's content.
+> **An AI-powered document intelligence platform built with Retrieval-Augmented Generation (RAG), Google Gemini, ChromaDB, and Streamlit.**
 
-Built from scratch to demonstrate a complete RAG pipeline including **document ingestion, text chunking, semantic embeddings, vector search, prompt engineering, and grounded response generation** using **Google Gemini**, **LangChain**, and **ChromaDB**.
-
----
-
-## 🚀 Features
-
-- 📄 Ask questions about any PDF
-- 🔍 Semantic search using vector embeddings
-- 🧠 Grounded answers generated only from retrieved document context
-- 🚫 Hallucination reduction through prompt engineering
-- ⚡ Local ChromaDB vector database
-- 🎛 Adjustable retrieval depth (Top-K)
-- 🏗 Modular architecture for easy extension
+DocMind AI enables users to upload documents, build a searchable knowledge base, and interact with them through natural language conversations. It combines modern RAG architecture with semantic search to deliver context-aware, grounded responses.
 
 ---
 
-## 🎥 Demo
+## ✨ Features
 
-![DocMind AI Demo](Sample_image.png)
+### 📂 Document Management
+- Upload PDF, DOCX, and TXT documents
+- Automatic document validation
+- Secure file storage with SHA-256 hashing
+- Metadata management
+- Document library with status tracking
+- Delete documents (removes metadata, files, and embeddings)
 
-### Example
+### 📖 Document Processing
+- PDF text extraction
+- DOCX parsing
+- TXT processing
+- Automatic page detection
+- Structured metadata generation
 
-**Question**
+### 🧩 Intelligent Chunking
+- Recursive text chunking
+- Configurable chunk size
+- Configurable overlap
+- Metadata preservation
+- Page-aware chunking
 
-> What is the difference between Bagging and Boosting?
+### 🧠 AI & Retrieval
+- Google Gemini Embeddings
+- ChromaDB vector database
+- Semantic similarity search
+- Retrieval-Augmented Generation (RAG)
+- Context-aware prompt construction
+- Streaming AI responses
 
-**Answer**
+### 💬 Conversational Interface
+- Chat with uploaded documents
+- Multi-turn conversation
+- Streaming responses
+- Source citations
+- Session history
+- Clear conversation support
 
-> Bagging trains multiple models independently on bootstrapped datasets and combines their predictions to reduce variance. Boosting trains models sequentially, where each model focuses on correcting errors made by previous models, reducing bias.
-
-If a question is outside the uploaded document, the assistant responds with:
-
-> *"I don't have enough information in the document to answer that."*
-
-This ensures answers remain grounded in the provided context rather than relying on the model's general knowledge.
+### 🎨 Modern UI
+- Responsive Streamlit interface
+- Workspace dashboard
+- Document statistics
+- Professional sidebar
+- Upload progress
+- Toast notifications
 
 ---
 
-# ✨ Why I Built This
+# 🏗️ Architecture
 
-Large Language Models are powerful, but they often hallucinate when answering domain-specific questions.
-
-This project was built to understand the internal workings of **Retrieval-Augmented Generation (RAG)** by implementing each stage of the pipeline from scratch instead of relying on black-box frameworks.
-
-The primary goal was to build a modular architecture where every stage—from retrieval to generation—can be independently replaced or upgraded.
-
----
-
-# 🧠 RAG Pipeline
-
+```text
+                        User
+                          │
+                          ▼
+                  Streamlit Interface
+                          │
+                          ▼
+                  Service Container
+                          │
+        ┌─────────────────┴─────────────────┐
+        ▼                                   ▼
+Document Manager                    RAG Pipeline
+        │                                   │
+        ▼                                   ▼
+ File Manager                      Retriever
+        │                                   │
+ Metadata Repository            Prompt Builder
+        │                                   │
+        ▼                                   ▼
+ Document Processor           Gemini Chat Model
+        │
+        ▼
+ Chunker
+        │
+        ▼
+ Gemini Embeddings
+        │
+        ▼
+ ChromaDB Vector Store
 ```
-                     PDF Document
-                           │
-                           ▼
-                Document Loader (PyPDF)
-                           │
-                           ▼
-          Recursive Character Text Splitter
-                           │
-                           ▼
-         Gemini Embedding Model (Vectors)
-                           │
-                           ▼
-                     ChromaDB
-                           ▲
-                           │
-User Question ─► Embedding ─► Similarity Search
-                           │
-                           ▼
-              Relevant Document Chunks
-                           │
-                           ▼
-           Prompt + Retrieved Context
-                           │
-                           ▼
-          Gemini 2.5 Flash Lite LLM
-                           │
-                           ▼
-                Grounded Final Answer
-```
-
-The system follows the standard **two-stage Retrieval-Augmented Generation architecture**:
-
-1. **Retrieval**
-   - Split document into chunks
-   - Convert chunks into embeddings
-   - Store embeddings inside ChromaDB
-   - Retrieve the most relevant chunks using semantic similarity
-
-2. **Generation**
-   - Combine retrieved chunks with the user's query
-   - Send them to Gemini
-   - Generate an answer using only the supplied context
 
 ---
 
-# 🏗 Project Structure
+# 📁 Project Structure
 
-```
-DocMind-AI/
+```text
+DocMind AI/
 │
-├── app.py                  # Streamlit UI
-├── loader.py               # PDF loading & chunking
-├── embedder.py             # Embedding generation & ChromaDB creation
-├── retriever.py            # Semantic similarity search
-├── generator.py            # Prompt construction & answer generation
+├── app.py
+├── config/
+├── managers/
+├── models/
+├── processors/
+├── rag/
+├── repositories/
+├── services/
+├── ui/
+├── utils/
+├── tests/
+├── data/
+│   ├── uploads/
+│   └── metadata.json
+│
 ├── requirements.txt
-├── README.md
-├── .env.example
-└── Sample_image.png
+├── pyproject.toml
+└── README.md
 ```
-
-Each component is isolated to make the system modular and extensible.
 
 ---
 
 # ⚙️ Tech Stack
 
-| Component | Technology |
-|------------|------------|
-| Language | Python |
-| UI | Streamlit |
-| LLM | Google Gemini 2.5 Flash Lite |
-| Embedding Model | Gemini Embedding-001 |
-| Framework | LangChain |
-| Vector Database | ChromaDB |
-| PDF Processing | PyPDF |
-| Environment Management | Python Dotenv |
+## Backend
 
----
-
-# 💡 Skills Demonstrated
-
-- Retrieval-Augmented Generation (RAG)
-- Prompt Engineering
-- Semantic Search
-- Vector Embeddings
-- ChromaDB
-- LangChain
-- Google Gemini API
+- Python 3.12
 - Streamlit
-- Python
-- Modular Software Design
+- Google Gemini API
+- ChromaDB
+- Pydantic v2
+- UV Package Manager
+
+## AI
+
+- Gemini 2.5
+- Gemini Embeddings
+- Retrieval-Augmented Generation (RAG)
+
+## Storage
+
+- Local File System
+- JSON Metadata Repository
+- ChromaDB Vector Database
 
 ---
 
-# 🚀 Getting Started
+# 🚀 Installation
 
-## 1. Clone the repository
+Clone the repository:
 
 ```bash
-git clone https://github.com/<HarshithaNellore>/DocMind-AI.git
+git clone https://github.com/<YOUR_USERNAME>/DocMind-AI.git
 cd DocMind-AI
 ```
 
----
-
-## 2. Create a virtual environment
-
-Using **uv**
+Install dependencies:
 
 ```bash
-uv venv
+uv sync
 ```
 
-Activate
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Linux / macOS
-
-```bash
-source .venv/bin/activate
-```
-
----
-
-## 3. Install dependencies
-
-```bash
-uv pip install -r requirements.txt
-```
-
----
-
-## 4. Configure environment variables
-
-Create a `.env` file
+Create a `.env` file:
 
 ```env
-GOOGLE_API_KEY=YOUR_GEMINI_API_KEY
+GOOGLE_API_KEY=your_api_key
+
+GEMINI_MODEL=your_model
+
+EMBEDDING_MODEL=your_embedding_model
 ```
 
-You can obtain a free API key from Google AI Studio.
-
----
-
-## 5. Add your PDF
-
-Place your PDF inside the project directory.
-
-By default the project expects
-
-```
-ai_ml_interview_qa.pdf
-```
-
-Update the filename inside `loader.py` if using a different document.
-
----
-
-## 6. Build the Vector Database
-
-Run once whenever the PDF changes.
-
-```bash
-uv run python embedder.py
-```
-
-This creates a local
-
-```
-chroma_db/
-```
-
-directory.
-
----
-
-## 7. Start the Application
+Run the application:
 
 ```bash
 uv run streamlit run app.py
 ```
 
-Visit
+---
+
+# 📚 Usage
+
+### 1. Upload Documents
+
+Supported formats:
+
+- PDF
+- DOCX
+- TXT
+
+---
+
+### 2. Process Documents
+
+DocMind AI automatically:
+
+- validates the document
+- extracts text
+- chunks the content
+- generates embeddings
+- stores vectors in ChromaDB
+
+---
+
+### 3. Ask Questions
+
+Example prompts:
 
 ```
-Local URL : http://localhost:8501
-Network URL: http://192.168.0.106:8501
+Summarize this document.
+
+What are the key findings?
+
+Explain chapter 3.
+
+Compare the uploaded documents.
+
+What conclusions does the author make?
 ```
 
 ---
 
-# 🎯 Design Decisions
+# 🔍 Retrieval Pipeline
 
-### Chunk Size
-
-- chunk_size = **800**
-- chunk_overlap = **150**
-
-Maintains semantic continuity while avoiding oversized chunks.
-
----
-
-### Low Temperature
-
-Generation temperature = **0.2**
-
-Produces more factual and deterministic answers.
-
----
-
-### Hallucination Prevention
-
-The prompt explicitly instructs Gemini to answer only from the retrieved context.
-
-If sufficient information isn't found, the assistant returns
-
-> "I don't know based on the provided document."
+```text
+Question
+    │
+    ▼
+Retriever
+    │
+    ▼
+Relevant Chunks
+    │
+    ▼
+Prompt Builder
+    │
+    ▼
+Gemini
+    │
+    ▼
+Answer + Sources
+```
 
 ---
 
-### Adjustable Retrieval
+# 📊 Current Capabilities
 
-Users can modify **Top-K retrieval** directly from the interface to observe how retrieval breadth affects answer quality.
+| Feature | Status |
+|----------|:------:|
+| PDF Processing | ✅ |
+| DOCX Processing | ✅ |
+| TXT Processing | ✅ |
+| Semantic Search | ✅ |
+| Streaming Responses | ✅ |
+| ChromaDB Integration | ✅ |
+| Gemini Embeddings | ✅ |
+| RAG Pipeline | ✅ |
+| Document Management | ✅ |
+| Workspace Dashboard | ✅ |
+| Source Citations | ✅ |
 
 ---
 
-### Modular Design
+# 🧪 Running Tests
 
-Retrieval and generation are completely decoupled.
+Run all tests:
 
-This allows replacing
+```bash
+uv run pytest
+```
 
-- Gemini → OpenAI
-- ChromaDB → Pinecone
-- ChromaDB → FAISS
+Or execute individual test modules:
 
-without affecting other components.
+```bash
+uv run python -m tests.test_pipeline
+```
+
+```bash
+uv run python -m tests.test_chunker
+```
+
+```bash
+uv run python -m tests.test_retriever
+```
+
+```bash
+uv run python -m tests.test_llm
+```
+
+---
+
+# 🔮 Future Enhancements
+
+- OCR support for scanned PDFs
+- Image understanding
+- Multi-document comparison
+- Hybrid search (BM25 + Vector Search)
+- Re-ranking models
+- Conversation persistence
+- User authentication
+- Cloud storage support
+- Docker deployment
+- REST API
+- Multi-user workspaces
+
+---
+
+# 🎥 Project Demo
+
+Watch the complete demo here:
+
+👉 https://drive.google.com/file/d/1x4s3240Dm-OzNt9ixGMDqvqVpYupheqJ/view?usp=sharing
+
+# 📸 Screenshots
+
+
+## Workspace
+
+![Workspace](assets/DocMind AI.png)
+
+## Chat
+
+![Chat](assets/chat.png)
+```
+
+---
+
+# 🚀 Evolution of DocMind AI
+
+## Version Comparison
+
+| Version 1 | Version 2 |
+|-----------|-----------|
+| ![Version 1](assets/Sample_image.png) | ![Version 2](assets/chat.png) |
+
+### What's New in Version 2
+
+- ✅ Modular architecture
+- ✅ Retrieval-Augmented Generation (RAG)
+- ✅ ChromaDB vector search
+- ✅ Google Gemini integration
+- ✅ Streaming AI responses
+- ✅ Document management
+- ✅ Source citations
+- ✅ Professional Streamlit UI
+- ✅ Service container architecture
+
+## 📈 Version Evolution
+
+| Feature | Version 1 | Version 2 |
+|---------|:---------:|:---------:|
+| PDF Upload | ✅ | ✅ |
+| Document Management | ❌ | ✅ |
+| Semantic Search | ❌ | ✅ |
+| RAG Pipeline | ❌ | ✅ |
+| Gemini AI | Basic | Advanced |
+| Streaming Responses | ❌ | ✅ |
+| Source Citations | ❌ | ✅ |
+| Modular Architecture | ❌ | ✅ |
+| ChromaDB | ❌ | ✅ |
+| Clean UI | Basic | Professional |
+
+
+# 👩‍💻 Author
+
+**Harshitha N**
+
+- Python Developer
+- AI / Machine Learning Enthusiast
+- Deep Learning & RAG Systems
+
+GitHub:
+```
+https://github.com/HarshithaNellore
+```
+
+LinkedIn:
+```
+https://linkedin.com/in/harshithanellore
+```
 
 ---
 

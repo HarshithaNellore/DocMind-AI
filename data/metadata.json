@@ -1,0 +1,17 @@
+{
+    "documents": [
+        {
+            "document_id": "777a0f43-6466-4559-8fd3-402e5472c81c",
+            "file_name": "Harshitha_Resume.pdf",
+            "stored_name": "777a0f43-6466-4559-8fd3-402e5472c81c.pdf",
+            "file_path": "C:\\Users\\Harshitha\\Downloads\\DocMind AI\\data\\uploads\\777a0f43-6466-4559-8fd3-402e5472c81c.pdf",
+            "file_type": "pdf",
+            "sha256": "349bf996d943fc1f6768622b6cdfb93291aa98392bb8e711c7fdbf09070ef558",
+            "file_size": 80314,
+            "uploaded_at": "2026-07-10T01:25:05.389597",
+            "status": "ready",
+            "total_pages": 1,
+            "total_chunks": 0
+        }
+    ]
+}
